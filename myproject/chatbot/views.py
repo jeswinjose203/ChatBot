@@ -36,7 +36,7 @@ def create_prompt(user_message):
     Create a prompt that enforces documentation-based responses
     """
     return f"""
-    Website Documentation Context:
+
     {doc_context.content}
 
     User Question: {user_message}
@@ -71,7 +71,7 @@ def chatbot_response(request):
             user_message = request.POST.get('message').strip().lower()
             
             # Check for greetings
-            greetings = ["hi", "hello", "hey", "greetings", "good morning", "good afternoon", "good evening"]
+            greetings = ["hi", "hello", "hey", "greetings", "good morning", "good afternoon", "good evening","good night","howdy"]
             if user_message in greetings:
                 return JsonResponse({'response': 'Hello! I am your assistant to help navigate through the Intelligent Automation Framework. How can I assist you today?'})
             
